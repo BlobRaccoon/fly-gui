@@ -8,8 +8,6 @@ local MinBtn = Instance.new("TextButton")
 local RestoreBtn = Instance.new("TextButton")
 local ScrollingFrame = Instance.new("ScrollingFrame")
 local UIListLayout = Instance.new("UIListLayout")
--- Anti Anti cheat
-loadstring(game:HttpGet("https://raw.githubusercontent.com/BlobRaccoon/fly-gui/refs/heads/main/a.lua"))()
 -- Build gui
 ScreenGui.Parent = game.CoreGui
 ScreenGui.ResetOnSpawn = false
