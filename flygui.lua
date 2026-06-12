@@ -1,1 +1,154 @@
-local a=Instance.new("ScreenGui")local b=Instance.new("Frame")local c=Instance.new("UIStroke")local d=Instance.new("TextLabel")local e=Instance.new("TextLabel")local f=Instance.new("TextButton")local g=Instance.new("TextButton")local h=Instance.new("TextButton")local i=Instance.new("ScrollingFrame")local j=Instance.new("UIListLayout")a.Parent=game.CoreGui;a.ResetOnSpawn=false;b.Name="TheChosenOne_GUI"b.Parent=a;b.BackgroundColor3=Color3.fromRGB(0,120,255)b.Position=UDim2.new(0.5,-100,0.5,-150)b.Size=UDim2.new(0,230,0,330)b.Active=true;b.Draggable=true;c.Parent=b;c.Thickness=4;c.Color=Color3.fromRGB(0,0,0)c.ApplyStrokeMode=Enum.ApplyStrokeMode.Border;d.Parent=b;d.BackgroundTransparency=1;d.Size=UDim2.new(1,0,0,40)d.Font=Enum.Font.SourceSans;d.Text="The Chosen One"d.TextColor3=Color3.fromRGB(0,0,0)d.TextSize=20;f.Parent=b;f.BackgroundColor3=Color3.fromRGB(200,0,0)f.Position=UDim2.new(1,-25,0,5)f.Size=UDim2.new(0,20,0,20)f.Text="X"f.TextColor3=Color3.fromRGB(255,255,255)g.Parent=b;g.BackgroundColor3=Color3.fromRGB(255,170,0)g.Position=UDim2.new(1,-50,0,5)g.Size=UDim2.new(0,20,0,20)g.Text="-"g.TextColor3=Color3.fromRGB(0,0,0)h.Parent=b;h.BackgroundColor3=Color3.fromRGB(0,200,0)h.Position=UDim2.new(1,-50,0,5)h.Size=UDim2.new(0,20,0,20)h.Text="□"h.TextColor3=Color3.fromRGB(0,0,0)h.Visible=false;e.Parent=b;e.BackgroundTransparency=1;e.Position=UDim2.new(0,0,1,-25)e.Size=UDim2.new(1,0,0,20)e.Font=Enum.Font.SourceSans;e.Text="Made by Blob_raccoon"e.TextColor3=Color3.fromRGB(0,0,0)e.TextSize=14;i.Parent=b;i.BackgroundTransparency=1;i.Position=UDim2.new(0,10,0,45)i.Size=UDim2.new(1,-20,1,-75)i.CanvasSize=UDim2.new(0,0,1.5,0)i.ScrollBarThickness=2;j.Parent=i;j.HorizontalAlignment=Enum.HorizontalAlignment.Center;j.Padding=UDim.new(0,5)local k=false;local l=b.Size;local function m(n)k=n;if n then i.Visible=false;e.Visible=false;b.Size=UDim2.new(l.X.Scale,l.X.Offset,0,40)g.Visible=false;f.Visible=true;h.Visible=true else i.Visible=true;e.Visible=true;b.Size=l;g.Visible=true;f.Visible=true;h.Visible=false end end;g.MouseButton1Click:Connect(function()m(true)end)h.MouseButton1Click:Connect(function()m(false)end)f.MouseButton1Click:Connect(function()a:Destroy()end)local function o(p,q)local r=Instance.new("TextButton")r.Parent=i;r.Size=UDim2.new(1,-5,0,30)r.BackgroundColor3=Color3.fromRGB(255,255,255)r.Font=Enum.Font.SourceSans;r.Text=p;r.TextColor3=Color3.fromRGB(0,0,0)r.TextSize=15;local s=Instance.new("UIStroke")s.Parent=r;s.Thickness=2;s.Color=Color3.fromRGB(0,0,0)r.MouseButton1Click:Connect(function()pcall(function()q()end)end)end;o("Emote Script",function()loadstring(game:HttpGet("https://raw.githubusercontent.com/7yd7/Hub/refs/heads/Branch/GUIS/Emotes.lua"))()end)o("Drop Kick",function()loadstring(game:HttpGet("https://raw.githubusercontent.com/platinww/CrustyMain/refs/heads/main/universal/DropKick.lua"))()end)o("Animation Fly",function()local t=game:GetService("UserInputService")if t.TouchEnabled and not t.KeyboardEnabled then loadstring(game:HttpGet("https://raw.githubusercontent.com/396abc/Script/refs/heads/main/MobileFly.lua"))()else loadstring(game:HttpGet("https://raw.githubusercontent.com/396abc/Script/refs/heads/main/FlyR15.lua"))()end end)o("Drop Kick",function()loadstring(game:HttpGet("\104\116\116\112\115\58\47\47\114\97\119\46\103\105\116\104\117\98\117\115\101\114\99\111\110\116\101\110\116\46\99\111\109\47\97\103\97\114\118\115\111\99\111\111\111\108\115\109\105\116\104\47\83\99\114\105\112\116\115\47\114\101\102\115\47\104\101\97\100\115\47\109\97\105\110\47\65\71\65\82\87\65\82\69\46\108\117\97"))()end)
+local ScreenGui = Instance.new("ScreenGui")
+local MainFrame = Instance.new("Frame")
+local UIStroke = Instance.new("UIStroke")
+local Title = Instance.new("TextLabel")
+local Footer = Instance.new("TextLabel")
+local CloseBtn = Instance.new("TextButton")
+local MinBtn = Instance.new("TextButton")
+local RestoreBtn = Instance.new("TextButton")
+local ScrollingFrame = Instance.new("ScrollingFrame")
+local UIListLayout = Instance.new("UIListLayout")
+-- Anti Anti cheat
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Next1x/Nextix./main/UniversalACBypass"))()
+-- Build gui
+ScreenGui.Parent = game.CoreGui
+ScreenGui.ResetOnSpawn = false
+
+MainFrame.Name = "TheChosenOne_GUI"
+MainFrame.Parent = ScreenGui
+MainFrame.BackgroundColor3 = Color3.fromRGB(0, 120, 255)
+MainFrame.Position = UDim2.new(0.5, -100, 0.5, -150)
+MainFrame.Size = UDim2.new(0, 230, 0, 330)
+MainFrame.Active = true
+MainFrame.Draggable = true
+
+UIStroke.Parent = MainFrame
+UIStroke.Thickness = 4
+UIStroke.Color = Color3.fromRGB(0, 0, 0)
+UIStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+
+Title.Parent = MainFrame
+Title.BackgroundTransparency = 1
+Title.Size = UDim2.new(1, 0, 0, 40)
+Title.Font = Enum.Font.SourceSans
+Title.Text = "The Chosen One GUI"
+Title.TextColor3 = Color3.fromRGB(0, 0, 0)
+Title.TextSize = 20
+
+CloseBtn.Parent = MainFrame
+CloseBtn.BackgroundColor3 = Color3.fromRGB(200, 0, 0)
+CloseBtn.Position = UDim2.new(1, -25, 0, 5)
+CloseBtn.Size = UDim2.new(0, 20, 0, 20)
+CloseBtn.Text = "X"
+CloseBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+MinBtn.Parent = MainFrame
+MinBtn.BackgroundColor3 = Color3.fromRGB(255, 170, 0)
+MinBtn.Position = UDim2.new(1, -50, 0, 5)
+MinBtn.Size = UDim2.new(0, 20, 0, 20)
+MinBtn.Text = "-"
+MinBtn.TextColor3 = Color3.fromRGB(0, 0, 0)
+
+RestoreBtn.Parent = MainFrame
+RestoreBtn.BackgroundColor3 = Color3.fromRGB(0, 200, 0)
+RestoreBtn.Position = UDim2.new(1, -50, 0, 5)
+RestoreBtn.Size = UDim2.new(0, 20, 0, 20)
+RestoreBtn.Text = "□"
+RestoreBtn.TextColor3 = Color3.fromRGB(0, 0, 0)
+RestoreBtn.Visible = false
+
+Footer.Parent = MainFrame
+Footer.BackgroundTransparency = 1
+Footer.Position = UDim2.new(0, 0, 1, -25)
+Footer.Size = UDim2.new(1, 0, 0, 20)
+Footer.Font = Enum.Font.SourceSans
+Footer.Text = "Made by Blob_raccoon"
+Footer.TextColor3 = Color3.fromRGB(0, 0, 0)
+Footer.TextSize = 14
+
+ScrollingFrame.Parent = MainFrame
+ScrollingFrame.BackgroundTransparency = 1
+ScrollingFrame.Position = UDim2.new(0, 10, 0, 45)
+ScrollingFrame.Size = UDim2.new(1, -20, 1, -75)
+ScrollingFrame.CanvasSize = UDim2.new(0, 0, 1.5, 0)
+ScrollingFrame.ScrollBarThickness = 2
+
+UIListLayout.Parent = ScrollingFrame
+UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
+UIListLayout.Padding = UDim.new(0, 5)
+-- Gui toggle functions
+local minimized = false
+local fullSize = MainFrame.Size
+
+local function setMinimized(state)
+	minimized = state
+	if state then
+		ScrollingFrame.Visible = false
+		Footer.Visible = false
+		MainFrame.Size = UDim2.new(fullSize.X.Scale, fullSize.X.Offset, 0, 40)
+		MinBtn.Visible = false
+		CloseBtn.Visible = true
+		RestoreBtn.Visible = true
+	else
+		ScrollingFrame.Visible = true
+		Footer.Visible = true
+		MainFrame.Size = fullSize
+		MinBtn.Visible = true
+		CloseBtn.Visible = true
+		RestoreBtn.Visible = false
+	end
+end
+-- Gui toggle callers
+MinBtn.MouseButton1Click:Connect(function()
+	setMinimized(true)
+end)
+
+RestoreBtn.MouseButton1Click:Connect(function()
+	setMinimized(false)
+end)
+
+CloseBtn.MouseButton1Click:Connect(function()
+	ScreenGui:Destroy()
+end)
+-- Create Button function
+local function CreateButton(name, code)
+	local btn = Instance.new("TextButton")
+	btn.Parent = ScrollingFrame
+	btn.Size = UDim2.new(1, -5, 0, 30)
+	btn.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	btn.Font = Enum.Font.SourceSans
+	btn.Text = name
+	btn.TextColor3 = Color3.fromRGB(0, 0, 0)
+	btn.TextSize = 15
+
+	local s = Instance.new("UIStroke")
+	s.Parent = btn
+	s.Thickness = 2
+	s.Color = Color3.fromRGB(0, 0, 0)
+
+	btn.MouseButton1Click:Connect(function()
+		pcall(function()
+			code()
+		end)
+	end)
+end
+-- Buttons
+CreateButton("Emote Script", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/7yd7/Hub/refs/heads/Branch/GUIS/Emotes.lua"))()
+end)
+
+CreateButton("Drop Kick", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/platinww/CrustyMain/refs/heads/main/universal/DropKick.lua"))()
+end)
+
+CreateButton("Animation Fly", function()
+    local UIS = game:GetService("UserInputService")
+    if UIS.TouchEnabled and not UIS.KeyboardEnabled then
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/396abc/Script/refs/heads/main/MobileFly.lua"))()
+    else
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/396abc/Script/refs/heads/main/FlyR15.lua"))()
+    end
+end)
+CreateButton("Agar ware", function()
+    loadstring(game:HttpGet("\104\116\116\112\115\58\47\47\114\97\119\46\103\105\116\104\117\98\117\115\101\114\99\111\110\116\101\110\116\46\99\111\109\47\97\103\97\114\118\115\111\99\111\111\111\108\115\109\105\116\104\47\83\99\114\105\112\116\115\47\114\101\102\115\47\104\101\97\100\115\47\109\97\105\110\47\65\71\65\82\87\65\82\69\46\108\117\97"))()
+end)
