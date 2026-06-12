@@ -138,7 +138,7 @@ CreateButton("Emote Script", function()
 end)
 
 CreateButton("Drop Kick", function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/platinww/CrustyMain/refs/heads/main/universal/DropKick.lua"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/BlobRaccoon/fly-gui/refs/heads/main/e.lua"))()
 end)
 
 CreateButton("Animation Fly", function()
