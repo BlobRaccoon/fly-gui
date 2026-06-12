@@ -132,11 +132,11 @@ local function CreateButton(name, code)
 end
 -- Buttons
 CreateButton("Emote Script", function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/BlobRaccoon/fly-gui/refs/heads/main/b.lua"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/7yd7/Hub/refs/heads/Branch/GUIS/Emotes.lua"))()
 end)
 
 CreateButton("Drop Kick", function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/BlobRaccoon/fly-gui/refs/heads/main/e.lua"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/platinww/CrustyMain/refs/heads/main/universal/DropKick.lua"))()
 end)
 
 CreateButton("Animation Fly", function()
