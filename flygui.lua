@@ -1,43 +1,46 @@
---[[
-	WARNING: Heads up! This script has not been verified by ScriptBlox. Use at your own risk!
-]]
+# Roblox LocalScript for Head Joint Rotation
 
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local head = character:WaitForChild("Head")
+local neck = head:FindFirstChild("Neck")
 
-coroutine.wrap(function()
+local spinning = false
+local speed = 1
 
-local EB_CHAT_PLR = game.Players.LocalPlayer
-EB_CHAT_PLR.Chatted:Connect(function(EB_CHATMSG1)
-	EB_CHATMSG = EB_CHATMSG1
-	EB_SENDER = EB_CHAT_PLR
-	local EB_MSG_V = Instance.new("IntValue")
-	EB_MSG_V.Name = "EB_MSG_"..tostring((tostring([[Chatted]])))
-	EB_MSG_V.Parent = game.ReplicatedStorage
+local screenGui = Instance.new("ScreenGui", player:WaitForChild("PlayerGui"))
+local toggleButton = Instance.new("TextButton", screenGui)
+toggleButton.Size = UDim2.new(0, 200, 0, 50)
+toggleButton.Position = UDim2.new(0.5, -100, 0, 0)
+toggleButton.Text = "Toggle Spin"
+
+local speedSlider = Instance.new("TextBox", screenGui)
+speedSlider.Size = UDim2.new(0, 200, 0, 50)
+speedSlider.Position = UDim2.new(0.5, -100, 0, 60)
+speedSlider.Text = "Speed (1-10)"
+speedSlider.TextScaled = true
+
+toggleButton.MouseButton1Click:Connect(function()
+    spinning = not spinning
+    toggleButton.Text = spinning and "Stop Spin" or "Start Spin"
 end)
 
-
-end)()
-coroutine.wrap(function()
-	game.ReplicatedStorage.ChildAdded:Connect(function(EB_c)
-	if EB_c.Name == "EB_MSG_"..tostring((tostring([[Chatted]]))) then
-		spawn(function()
-			task.wait(0.1)
-			EB_c:Destroy()
-		end)
-		for EB_curr_index, EB_curr_item in ipairs(game.Players:GetPlayers()) do
-if ((((tostring(EB_CHATMSG):split(tostring((tostring([[ ]])))))[tonumber((tonumber(1)))] == (tostring([[/tp]]))) and ((tostring(EB_CHATMSG):split(tostring((tostring([[ ]])))))[tonumber((tonumber(2)))] == EB_curr_item[tostring((tostring([[Name]])))]))) then
-EB_foundChild = EB_curr_item.Character:FindFirstChild(tostring((tostring([[HumanoidRootPart]]))))
-local EB_targetPos = EB_foundChild.Position
-if game.Players.LocalPlayer.Character and typeof(EB_targetPos) == "Vector3" then
-	local EB_currPivot = game.Players.LocalPlayer.Character:GetPivot()
-	local EB_rotX, EB_rotY, EB_rotZ = EB_currPivot:ToOrientation() 
-	game.Players.LocalPlayer.Character:PivotTo(CFrame.new(EB_targetPos) * CFrame.Angles(EB_rotX, EB_rotY, EB_rotZ))
-end
-
-end
-
-end
-
-	end
+speedSlider.FocusLost:Connect(function(enterPressed)
+    if enterPressed then
+        local newSpeed = tonumber(speedSlider.Text)
+        if newSpeed and newSpeed > 0 and newSpeed <= 10 then
+            speed = newSpeed
+        end
+    end
 end)
-end)()
+
+while true do
+    if spinning then
+        local rotation = CFrame.Angles(0, math.rad(speed * 10), 0)
+        neck.C0 = neck.C0 * rotation
+        neck.C1 = neck.C1 * rotation
+        game.ReplicatedStorage:WaitForChild("Neck").Changed:Fire()
+    end
+    wait(0.1)
+end
 
