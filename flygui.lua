@@ -175,6 +175,5 @@ CreateButton("Agar ware", function()
 end)
 
 CreateButton("Reset", function()
-		
+		    loadstring(game:HttpGet("https://raw.githubusercontent.com/BlobRaccoon/fly-gui/refs/heads/main/reset.lua"))()
 end)
-
