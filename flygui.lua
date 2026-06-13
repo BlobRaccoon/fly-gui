@@ -1,6 +1,7 @@
 local ScreenGui = Instance.new("ScreenGui")
 local MainFrame = Instance.new("Frame")
 local UIStroke = Instance.new("UIStroke")
+local UICorner = Instance.new("UICorner")
 local Title = Instance.new("TextLabel")
 local Footer = Instance.new("TextLabel")
 local CloseBtn = Instance.new("TextButton")
@@ -8,73 +9,88 @@ local MinBtn = Instance.new("TextButton")
 local RestoreBtn = Instance.new("TextButton")
 local ScrollingFrame = Instance.new("ScrollingFrame")
 local UIListLayout = Instance.new("UIListLayout")
--- Build gui
+
+-- build gui
 ScreenGui.Parent = game.CoreGui
 ScreenGui.ResetOnSpawn = false
 
 MainFrame.Name = "TheChosenOne_GUI"
 MainFrame.Parent = ScreenGui
-MainFrame.BackgroundColor3 = Color3.fromRGB(0, 120, 255)
-MainFrame.Position = UDim2.new(0.5, -100, 0.5, -150)
-MainFrame.Size = UDim2.new(0, 230, 0, 330)
+MainFrame.BackgroundColor3 = Color3.fromRGB(25, 25, 35)
+MainFrame.Position = UDim2.new(0.5, -110, 0.5, -140)
+MainFrame.Size = UDim2.new(0, 220, 0, 300)
 MainFrame.Active = true
 MainFrame.Draggable = true
 
+UICorner.Parent = MainFrame
+UICorner.CornerRadius = UDim.new(0, 8)
+
 UIStroke.Parent = MainFrame
-UIStroke.Thickness = 4
-UIStroke.Color = Color3.fromRGB(0, 0, 0)
+UIStroke.Thickness = 1
+UIStroke.Color = Color3.fromRGB(80, 80, 100)
 UIStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
 
 Title.Parent = MainFrame
-Title.BackgroundTransparency = 1
-Title.Size = UDim2.new(1, 0, 0, 40)
-Title.Font = Enum.Font.SourceSans
+Title.BackgroundColor3 = Color3.fromRGB(35, 35, 50)
+Title.Size = UDim2.new(1, 0, 0, 28)
+Title.Font = Enum.Font.SourceSansBold
 Title.Text = "The Chosen One GUI"
-Title.TextColor3 = Color3.fromRGB(0, 0, 0)
-Title.TextSize = 20
+Title.TextColor3 = Color3.fromRGB(235, 235, 235)
+Title.TextSize = 16
+
+local titleCorner = Instance.new("UICorner")
+titleCorner.CornerRadius = UDim.new(0, 8)
+titleCorner.Parent = Title
 
 CloseBtn.Parent = MainFrame
-CloseBtn.BackgroundColor3 = Color3.fromRGB(200, 0, 0)
-CloseBtn.Position = UDim2.new(1, -25, 0, 5)
-CloseBtn.Size = UDim2.new(0, 20, 0, 20)
+CloseBtn.BackgroundColor3 = Color3.fromRGB(220, 70, 70)
+CloseBtn.Position = UDim2.new(1, -24, 0, 5)
+CloseBtn.Size = UDim2.new(0, 18, 0, 18)
 CloseBtn.Text = "X"
 CloseBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
+CloseBtn.Font = Enum.Font.SourceSansBold
+CloseBtn.TextSize = 12
 
 MinBtn.Parent = MainFrame
-MinBtn.BackgroundColor3 = Color3.fromRGB(255, 170, 0)
-MinBtn.Position = UDim2.new(1, -50, 0, 5)
-MinBtn.Size = UDim2.new(0, 20, 0, 20)
+MinBtn.BackgroundColor3 = Color3.fromRGB(240, 180, 60)
+MinBtn.Position = UDim2.new(1, -48, 0, 5)
+MinBtn.Size = UDim2.new(0, 18, 0, 18)
 MinBtn.Text = "-"
 MinBtn.TextColor3 = Color3.fromRGB(0, 0, 0)
+MinBtn.Font = Enum.Font.SourceSansBold
+MinBtn.TextSize = 14
 
 RestoreBtn.Parent = MainFrame
-RestoreBtn.BackgroundColor3 = Color3.fromRGB(0, 200, 0)
-RestoreBtn.Position = UDim2.new(1, -50, 0, 5)
-RestoreBtn.Size = UDim2.new(0, 20, 0, 20)
+RestoreBtn.BackgroundColor3 = Color3.fromRGB(80, 200, 120)
+RestoreBtn.Position = UDim2.new(1, -48, 0, 5)
+RestoreBtn.Size = UDim2.new(0, 18, 0, 18)
 RestoreBtn.Text = "□"
 RestoreBtn.TextColor3 = Color3.fromRGB(0, 0, 0)
+RestoreBtn.Font = Enum.Font.SourceSansBold
+RestoreBtn.TextSize = 12
 RestoreBtn.Visible = false
 
 Footer.Parent = MainFrame
 Footer.BackgroundTransparency = 1
-Footer.Position = UDim2.new(0, 0, 1, -25)
-Footer.Size = UDim2.new(1, 0, 0, 20)
+Footer.Position = UDim2.new(0, 0, 1, -18)
+Footer.Size = UDim2.new(1, 0, 0, 16)
 Footer.Font = Enum.Font.SourceSans
 Footer.Text = "Made by Blob_raccoon"
-Footer.TextColor3 = Color3.fromRGB(0, 0, 0)
-Footer.TextSize = 14
+Footer.TextColor3 = Color3.fromRGB(150, 150, 150)
+Footer.TextSize = 12
 
 ScrollingFrame.Parent = MainFrame
 ScrollingFrame.BackgroundTransparency = 1
-ScrollingFrame.Position = UDim2.new(0, 10, 0, 45)
-ScrollingFrame.Size = UDim2.new(1, -20, 1, -75)
-ScrollingFrame.CanvasSize = UDim2.new(0, 0, 1.5, 0)
-ScrollingFrame.ScrollBarThickness = 2
+ScrollingFrame.Position = UDim2.new(0, 8, 0, 32)
+ScrollingFrame.Size = UDim2.new(1, -16, 1, -52)
+ScrollingFrame.CanvasSize = UDim2.new(0, 0, 0, 0)
+ScrollingFrame.ScrollBarThickness = 3
 
 UIListLayout.Parent = ScrollingFrame
 UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
-UIListLayout.Padding = UDim.new(0, 5)
--- Gui toggle functions
+UIListLayout.Padding = UDim.new(0, 3)
+
+-- gui toggle functions
 local minimized = false
 local fullSize = MainFrame.Size
 
@@ -96,7 +112,8 @@ local function setMinimized(state)
 		RestoreBtn.Visible = false
 	end
 end
--- Gui toggle callers
+
+-- gui toggle callers
 MinBtn.MouseButton1Click:Connect(function()
 	setMinimized(true)
 end)
@@ -108,21 +125,26 @@ end)
 CloseBtn.MouseButton1Click:Connect(function()
 	ScreenGui:Destroy()
 end)
--- Create Button function
+
+-- create button function
 local function CreateButton(name, code)
 	local btn = Instance.new("TextButton")
 	btn.Parent = ScrollingFrame
-	btn.Size = UDim2.new(1, -5, 0, 30)
-	btn.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	btn.Size = UDim2.new(1, -6, 0, 28)
+	btn.BackgroundColor3 = Color3.fromRGB(45, 45, 60)
 	btn.Font = Enum.Font.SourceSans
 	btn.Text = name
-	btn.TextColor3 = Color3.fromRGB(0, 0, 0)
-	btn.TextSize = 15
+	btn.TextColor3 = Color3.fromRGB(235, 235, 235)
+	btn.TextSize = 14
 
-	local s = Instance.new("UIStroke")
-	s.Parent = btn
-	s.Thickness = 2
-	s.Color = Color3.fromRGB(0, 0, 0)
+	local corner = Instance.new("UICorner")
+	corner.CornerRadius = UDim.new(0, 6)
+	corner.Parent = btn
+
+	local stroke = Instance.new("UIStroke")
+	stroke.Parent = btn
+	stroke.Thickness = 1
+	stroke.Color = Color3.fromRGB(90, 90, 120)
 
 	btn.MouseButton1Click:Connect(function()
 		pcall(function()
