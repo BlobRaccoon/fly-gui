@@ -178,5 +178,6 @@ CreateButton("Reset", function()
 end)
 
 CreateButton("Orbit universal", function()
+		setclipboard("w5x6y7z8-a9b0-c1d2-e3f4")
 loadstring(game:HttpGet("https://raw.githubusercontent.com/im-a-script-kiddie/orbit-hub/refs/heads/main/im_a_script_kiddie"))()
 end)
