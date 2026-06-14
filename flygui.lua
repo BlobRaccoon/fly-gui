@@ -153,7 +153,7 @@ local function CreateButton(name, code)
 	end)
 end
 -- Buttons
-CreateButton("Emote Script", function()
+CreateButton("Emotes", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/7yd7/Hub/refs/heads/Branch/GUIS/Emotes.lua"))()
 end)
 
@@ -173,11 +173,8 @@ end)
 CreateButton("Agar ware", function()
     loadstring(game:HttpGet("\104\116\116\112\115\58\47\47\114\97\119\46\103\105\116\104\117\98\117\115\101\114\99\111\110\116\101\110\116\46\99\111\109\47\97\103\97\114\118\115\111\99\111\111\111\108\115\109\105\116\104\47\83\99\114\105\112\116\115\47\114\101\102\115\47\104\101\97\100\115\47\109\97\105\110\47\65\71\65\82\87\65\82\69\46\108\117\97"))()
 end)
-CreateButton("Reset", function()
-		    loadstring(game:HttpGet("https://raw.githubusercontent.com/BlobRaccoon/fly-gui/refs/heads/main/reset.lua"))()
+
+CreateButton("Monkey gang", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/agarvsocooolsmith/Scripts/refs/heads/main/MONKEYGANGUI.lua"))()"))()
 end)
 
-CreateButton("Orbit universal", function()
-		setclipboard("w5x6y7z8-a9b0-c1d2-e3f4")
-loadstring(game:HttpGet("https://raw.githubusercontent.com/im-a-script-kiddie/orbit-hub/refs/heads/main/im_a_script_kiddie"))()
-end)
