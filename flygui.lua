@@ -178,3 +178,6 @@ CreateButton("Monkey gang", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/agarvsocooolsmith/Scripts/refs/heads/main/MONKEYGANGUI.lua"))()"))()
 end)
 
+CreateButton("Script Search", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/BlobRaccoon/fly-gui/refs/heads/main/search.lua"))()"))()
+end)
