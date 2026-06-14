@@ -2,6 +2,8 @@
     local UIS = game:GetService("UserInputService")
     -- TCH service for credits in chat
     local TCH = game:GetService("TextChatService")
+    -- Turn the long command 'TCH.TextChannels.RBXGeneral' shorter
+    local channel = TCH.TextChannels.RBXGeneral
     -- Emote Hub By 7yd7 (I did NOT make this script)
     loadstring(game:HttpGet("https://raw.githubusercontent.com/7yd7/Hub/refs/heads/Branch/GUIS/Emotes.lua"))()
     -- Wait to prevent lag
@@ -21,7 +23,14 @@
 	    -- Keyboard
         loadstring(game:HttpGet("https://raw.githubusercontent.com/396abc/Script/refs/heads/main/FlyR15.lua"))()
     end
-    task.wait(5)
-    TCH.TextChannels.RBXGeneral:DisplaySystemMessage(
-        "[The Chosen One greif/troll combo loaded. I didnt make any of the scripts loaded in this so credits to '7yd7' (emote wheel), 'platinww' (dropkick), 'argarv' (agar ware), '396abc' (Fly animation)]"
-    )
+    -- wait 3
+    task.wait(3)
+    -- Credits/Info messages
+    channel:DisplaySystemMessage("[The Chosen One Greif/Troll combo]")
+    channel:DisplaySystemMessage("Loaded successfully.")
+    channel:DisplaySystemMessage(" ")
+    channel:DisplaySystemMessage("Included scripts:")
+    channel:DisplaySystemMessage("→ Emote Wheel (7yd7)")
+    channel:DisplaySystemMessage("→ Dropkick (platinww)")
+    channel:DisplaySystemMessage("→ Agar Ware (argarv)")
+    channel:DisplaySystemMessage("→ Fly Animation (396abc)")
